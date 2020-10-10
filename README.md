@@ -9,7 +9,7 @@ If you would like to change or add something, or even create a better version fe
 Add a dependence in `Cargo.toml`
 ```toml
 [dependencies]
-random-string = "0.1.0"
+random-string = "0.1.1"
 ``` 
 
 ## Functions
