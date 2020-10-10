@@ -10,7 +10,7 @@ pub enum Charset {
     Special,
 }
 
-struct RandomString;
+pub struct RandomString;
 
 impl RandomString {
 
