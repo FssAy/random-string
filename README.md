@@ -1,11 +1,6 @@
 # random-string
 A simple crate that allows you to generate random strings based on a given charset and length.
 
-## Description
-~~This is just a test crate for my personal use, and I don't think that there would be more updates. <br>
-If you would like to change or add something, or even create a better version feel free to do so.~~ <br>
-I've learned some new things and wanted to avoid humiliation from `0.1.1`
-
 ## "Benchmark"
 Generating 3 times 100000 results with length 10 and Letters charset.
 
@@ -23,31 +18,26 @@ Benchmark: 0.634s
 Benchmark: 0.635s
 ```
 
-test src
+Benchmark test src
 ```rust
-#[cfg(test)]
-mod tests {
+fn execute() {
+    use crate::{RandomString, Charset, Charsets};
+    use chrono::prelude::*;
 
-    fn execute() {
-        use crate::{RandomString, Charset, Charsets};
-        use chrono::prelude::*;
+    let time_start = Utc::now();
 
-        let time_start = Utc::now();
-
-        let charset = Charset::from_charsets(Charsets::Letters);
-        for _ in 0..100000 {
-            let _ = RandomString::generate(10, &charset);
-        }
-
-        let time_end = Utc::now() - time_start;
-        println!("Benchmark: {}.{}s", time_end.num_seconds(), time_end.num_milliseconds());
+    let charset = Charset::from_charsets(Charsets::Letters);
+    for _ in 0..100000 {
+        let _ = RandomString::generate(10, &charset);
     }
 
-    #[test]
-    fn main_test() {
-        for _ in 0..3 {
-            execute();
-        }
+    let time_end = Utc::now() - time_start;
+    println!("Benchmark: {}.{}s", time_end.num_seconds(), time_end.num_milliseconds());
+}
+
+fn main() {
+    for _ in 0..3 {
+        execute();
     }
 }
 ```
