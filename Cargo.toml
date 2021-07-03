@@ -1,6 +1,6 @@
 [package]
 name = "random-string"
-version = "0.2.1"
+version = "1.0.0"
 authors = ["FssAy <49795742+DmitrijVC@users.noreply.github.com>", "Skarlett@github.com"]
 edition = "2018"
 license = "GPL-3.0-only"
@@ -8,6 +8,9 @@ description = "Allows to generate random strings based on a given charset and le
 # documentation = "-"
 repository = "https://github.com/DmitrijVC/random-string"
 readme = "README.md"
+
+[lib]
+path = "src/random_string.rs"
 
 [dependencies]
 fastrand = "1.4"
