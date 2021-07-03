@@ -10,25 +10,17 @@ random-string = "0.2.0"
 
 ## Example
 ```rust
-use random_string::{
-    Charset, 
-    GenResult, 
-    generate,
-};
-
+use random_string::generate;
 
 fn main() {
-    let charset_str = Charset::new("1234567890").unwrap();
-
-    let body = String::from("1234567890");
-    let charset_string = Charset::new(&*body).unwrap();
+    let charset = "1234567890";
 
     print_result(
-        generate(6, &charset_str)
+        generate(6, charset)
     );
 
     print_result(
-        generate(6, &charset_string)
+        generate(6, charset)
     );
 }
 
