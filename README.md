@@ -5,7 +5,7 @@ A simple crate that allows you to generate random strings based on a given chars
 Add a dependence in `Cargo.toml`
 ```toml
 [dependencies]
-random-string = "0.2.0"
+random-string = "0.2"
 ``` 
 
 ## Example
