@@ -5,35 +5,16 @@ A simple crate that allows you to generate random strings based on a given chars
 Add a dependence in `Cargo.toml`
 ```toml
 [dependencies]
-random-string = "0.2.0"
+random-string = "1.0"
 ``` 
 
 ## Example
 ```rust
-use random_string::{
-    Charset, 
-    GenResult, 
-    generate,
-};
-
+use random_string::generate;
 
 fn main() {
-    let charset_str = Charset::new("1234567890").unwrap();
+    let charset = "1234567890";
 
-    let body = String::from("1234567890");
-    let charset_string = Charset::new(&*body).unwrap();
-
-    print_result(
-        generate(6, &charset_str)
-    );
-
-    print_result(
-        generate(6, &charset_string)
-    );
-}
-
-fn print_result(result: GenResult) {
-    println!("Generated String: {}", result);
-    println!("Generated Chars: {:?}", result);
+    println!("[{}]", generate(6, charset));
 }
 ```
