@@ -17,3 +17,9 @@ fastrand = "1.4"
 
 [profile.release]
 opt-level = 3
+
+[features]
+default = [
+    "charsets",
+]
+charsets = []

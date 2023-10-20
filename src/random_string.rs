@@ -3,7 +3,8 @@ mod tests;
 
 mod generator;
 
+#[cfg(feature = "charsets")]
+pub mod charsets;
+
 #[allow(unused_imports)]
 pub use generator::*;
-
-pub const DEFAULT_CHARSET: &str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
