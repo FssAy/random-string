@@ -41,6 +41,7 @@ fn default_charsets() {
         generate(LEN, charset).chars().count(),
         LEN,
     );
+}
 
 #[test]
 fn random_length_generation() {
