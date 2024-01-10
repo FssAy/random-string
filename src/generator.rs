@@ -36,3 +36,25 @@ pub fn generate<S: AsRef<str>>(length: usize, charset: S) -> String {
 
     result
 }
+
+/// Calls the `generate` with random length out of provided, `range`
+///
+/// Will Panic if the provided charset in empty.
+///
+/// # Arguments
+///
+/// * `range` - `Range` of lenghts to choose from
+/// * `charset` - Object implementing `AsRef` trait to do reference-to-reference conversion into `&str`
+///
+/// # Example
+///
+/// ```
+/// use random_string::generate_rng;
+///
+/// let charset = random_string::charsets::ALPHA;
+/// println!("{}", generate_rng(3..7, charset));
+/// ```
+
+pub fn generate_rng<S: AsRef<str>>(range: std::ops::Range<usize>, charset: S) -> String {
+    generate(fastrand::usize(range), charset)
+}
