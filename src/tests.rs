@@ -41,4 +41,15 @@ fn default_charsets() {
         generate(LEN, charset).chars().count(),
         LEN,
     );
+
+#[test]
+fn random_length_generation() {
+    let range = 4..10;
+    let charset = "0123456789";
+
+    assert!(
+        (4..10).contains(
+            &generate_rng(range, charset).chars().count()
+        )
+    );
 }
